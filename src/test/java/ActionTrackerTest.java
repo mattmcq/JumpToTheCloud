@@ -67,13 +67,13 @@ public class ActionTrackerTest {
         assertEquals(3000, tracker.values.size());  // without 'synchronized' on addAction this fails
     }
 
-    private void addSampleActions() {
+    public void addSampleActions() {
         tracker.addAction("{\"action\":\"jump\", \"time\":100}");
         tracker.addAction("{\"action\":\"run\", \"time\":75}");
         tracker.addAction("{\"action\":\"jump\", \"time\":200}");
     }
 
-    private void addManyActions() {
+    public void addManyActions() {
         tracker.addAction("{\"action\":\"jump\", \"time\":100}");
         tracker.addAction("{\"action\":\"run\", \"time\":75}");
         tracker.addAction("{\"action\":\"jump\", \"time\":200}");
