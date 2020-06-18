@@ -8,31 +8,31 @@ import java.util.stream.IntStream;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class ActionTrackerTest {
+public class ActionTrackerTest {
 
     ActionTracker tracker;
 
     @BeforeEach
-    void setUp() {
+    public void setUp() {
         tracker = new ActionTracker();
     }
 
     @Test
-    void testAddAction() {
+    public void testAddAction() {
         addSampleActions();
         assertEquals(3, tracker.values.size());
         assertEquals(2, tracker.averages.size());
     }
 
     @Test
-    void testAddAction_manyActions() {
+    public void testAddAction_manyActions() {
         addManyActions();
         assertEquals(6, tracker.values.size());
         assertEquals(4, tracker.averages.size());
     }
 
     @Test
-    void testGetStats() {
+    public void testGetStats() {
         addSampleActions();
         String results = tracker.getStats();
 
@@ -49,7 +49,7 @@ class ActionTrackerTest {
     }
 
     @Test
-    void testGetStats_manyActions() {
+    public void testGetStats_manyActions() {
         addManyActions();
         String results = tracker.getStats();
         String expected = "[{\"avg\":20.5,\"action\":\"bike\"},{\"avg\":150,\"action\":\"jump\"},{\"avg\":75,\"action\":\"run\"},{\"avg\":2000,\"action\":\"walk\"}]";
