@@ -3,7 +3,9 @@ import org.apache.commons.collections4.multimap.ArrayListValuedHashMap;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.TreeMap;
 
 public class ActionTracker {
 
@@ -23,8 +25,8 @@ public class ActionTracker {
         for (Object action : values.keySet()) {
             int total = 0;
             Object[] times = values.get(action).toArray();
-            for (int i = 0; i < times.length; i++) {
-                Integer val = (Integer) times[i];
+            for (Object time : times) {
+                Integer val = (Integer) time;
                 total = total + val;
             }
             double average = (double) total / times.length;
